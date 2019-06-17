@@ -7,7 +7,7 @@ class Show < ActiveRecord::Base
   # return the show with the highest rating.
   # hint: use the highest_rating method as a helper method
   def self.most_popular_show
-    show = Show.where("rating" == self.highest_rating)
+    show = Show.find_by rating: self.highest_rating
     show.name
   end
 
